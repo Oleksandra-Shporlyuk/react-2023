@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+// import Comments from "./components/posts/posts";
+// import Posts from "./components/posts/posts";
+// import DetailsPosts from "./DetailsPosts/detailsPosts";
+import "./App.css";
+// import Launchs from "./components/launchs/launchs";
+import Users from "./components/users/users";
+import UserPosts from "./components/userPosts/userPosts";
+const App = () => {
+    const [userId, setUserId] = useState(null);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//     const [chosenPost, setChosenPost] = useState(null);
+//
+//     const lift = (obj) => {
+//         setChosenPost({...obj})
+//     }
+    return (
+        <div className={'container'}>
+
+            {/*<div className={'postsBlock'}>POSTS: <Posts lift={lift}/></div>*/}
+            {/*{*/}
+            {/*    chosenPost*/}
+            {/*    &&*/}
+            {/*    <div className={'detailsBlock'}>DETAILS: <DetailsPosts value={chosenPost}/></div>*/}
+            {/*}*/}
+
+            {/*<Launchs/>*/}
+            <Users setUsersId={setUserId}/>
+            {userId && <UserPosts userId={userId}/>}
+
+
+        </div>
+    );
 }
 
 export default App;
